@@ -1,25 +1,28 @@
 // __tests__/Gallery.test.js
 import React from 'react'
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import Gallery from '..'
-const portrait = { name: "portraits", description: "Portraits of people in my life" };
+import Modal from '..'
+
+const currentPhoto = {
+  name: 'Park bench',
+  category: 'landscape',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
+  index: 1
+};
 
 afterEach(cleanup)
 
-describe('Gallery component', () => {
+describe('Modal component', () => {
 
   it('renders', () => {
-    render(<Gallery currentCategory={portrait} />);
+    //baseline render component test
   });
 
-  it('matches snapshot', () => {
-    const { asFragment } = render(<Gallery currentCategory={portrait} />)
-    expect(asFragment()).toMatchSnapshot()
-  })
-});
-
-it('renders', () => {
-  const { getByTestId } = render(<Gallery currentCategory={portrait} />)
-  expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
+  //snapshot test
+  it('matches snapshot DOM node structure', () => {
+    //Arrange the snapshot - declare variables
+    //Assert the match 
+  });
 })
+
